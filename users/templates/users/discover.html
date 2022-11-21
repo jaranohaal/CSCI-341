@@ -1,0 +1,38 @@
+{% extends 'users/main.html' %}
+
+{%block content%}
+
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body w-50 text-center mx-auto mb-2" style="background-color: rgb(230, 220, 206);">
+                        <h5>Discoveries</h5>
+                </div>
+		<div class="card card-body w-50 mx-auto text-center" style="background-color: rgb(230, 220, 206);">
+			<a class="btn btn-success  btn-sm btn-block" href="{%url 'create_discover'%}" style="background-color: rgb(65, 137, 104);">Add Discovery</a>
+			<table class="table">
+				<tr>
+				    <th>Country name</th>
+                                    <th>Disease code</th>
+                                    <th>First encountered</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
+				</tr>
+                        {%for disc in discover%}
+                        <tr>
+                                <td>{{disc.cname}}</td>
+                                <td>{{disc.disease_code}}</td>
+                                <td>{{disc.first_enc_date}}</td>
+                                <td><a href="{%url 'update_discover' disc.cname%}">Edit</a></td>
+                                <td><a href="{%url 'delete_discover' disc.cname%}">Delete</a></td>
+                        </tr>
+                        {%endfor%}
+
+			</table>
+		</div>
+	</div>
+
+	
+
+</div>
+{%endblock%}

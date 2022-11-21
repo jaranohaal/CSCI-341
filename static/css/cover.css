@@ -1,0 +1,32 @@
+/*
+ * Globals
+ */
+
+/* Links */
+
+a:focus,
+a:hover {
+  color: rgb(147, 120, 120);
+}
+h1{
+  color: rgb(20, 17, 17);
+}
+
+/* Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: rgb(237, 241, 240);
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: rgb(65, 137, 104);
+  border: .05rem solid #fff;
+}
+p{
+  color: rgb(13, 10, 10);
+}
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+{% extends 'users/main.html' %}
+
+{%block content%}
+
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body  text-center mx-auto mb-2 w-50" style="background-color: rgb(230, 220, 206);">
+                        <h5>Disease types</h5>
+                </div>
+		<div class="card card-body w-50 mx-auto text-center" style="background-color: rgb(230, 220, 206);">
+			<a class="btn btn-success  btn-sm btn-block" href="{%url 'create_diseasetype'%}" style="background-color: rgb(65, 137, 104);">Add Disease Type</a>
+			<table class="table">
+				<tr>
+				    <th>Disease type</th>
+                    <th>Description</th>
+					<th>Edit</th>
+					<th>Delete</th>
+				</tr>
+                {%for dt in disease_type%}
+                        <tr>
+                                <td>{{dt.id}}</td>
+                                <td>{{dt.description}}</td>
+								<td><a href="{%url 'update_diseasetype' dt.id%}">Edit</a></td>
+								<td><a href="{%url 'delete_diseasetype' dt.id%}">Delete</a></td>
+                        </tr>
+                {%endfor%}
+
+			</table>
+		</div>
+	</div>
+
+	
+
+</div>
+{%endblock%}

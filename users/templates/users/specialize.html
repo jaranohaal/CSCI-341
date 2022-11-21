@@ -1,0 +1,37 @@
+{% extends 'users/main.html' %}
+
+{%block content%}
+
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body text-center mx-auto mb-2 w-50" style="background-color: rgb(230, 220, 206);">
+                        <h5>Specializations</h5>
+                </div>
+		<div class="card card-body text-center mx-auto mb-2 w-50" style="background-color: rgb(230, 220, 206);">
+			<a class="btn btn-success  btn-sm btn-block" href="{%url 'create_spec'%}" style="background-color: rgb(65, 137, 104);">Add a Specialization</a>
+			<table class="table">
+				<tr>
+				    <th>Id</th>
+                    <th>Email</th>
+					<th>Edit</th>
+					<th>Delete</th>
+				</tr>
+                {%for spec in specialize%}
+                        <tr>
+                                <td>{{spec.id}}</td>
+                                <td>{{spec.email}}</td>
+								<td><a href="{%url 'update_spec' spec.id%}">Edit</a></td>
+								<td><a href="{%url 'delete_spec' spec.id%}">Delete</a></td>
+                                
+                        </tr>
+                {%endfor%}
+
+			</table>
+		</div>
+	</div>
+
+	
+
+</div>
+{%endblock%}

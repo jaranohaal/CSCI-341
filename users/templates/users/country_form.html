@@ -1,0 +1,17 @@
+{% extends 'users/main.html' %}
+{%load static%}
+{%block content%}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="card w-50 mx-auto" style="background-color: rgb(230, 220, 206);">
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" name="Submit">
+</form>
+</div>
+{%endblock%}

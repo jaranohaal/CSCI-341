@@ -1,0 +1,21 @@
+{% extends 'users/main.html' %}
+{%load static%}
+{%block content%}
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="card w-50 mx-auto" style="background-color: rgb(230, 220, 206);">
+<p>Do you want to delete "{{item}}"?</p>
+
+<form action="{%url 'delete_spec' item.id %}" method="POST">
+    {%csrf_token%}
+    <a href="{%url 'specialize'%}">Cancel</a>
+    <input type="submit" name="Confirm">
+</form>
+</div>
+{%endblock%}

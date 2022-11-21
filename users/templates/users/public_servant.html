@@ -1,0 +1,36 @@
+{% extends 'users/main.html' %}
+
+{%block content%}
+
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body text-center mb-2 mx-auto w-50" style="background-color: rgb(230, 220, 206);">
+                        <h5>Public servants</h5>
+                </div>
+		<div class="card card-body w-50 mb-2 mx-auto" style="background-color: rgb(230, 220, 206);">
+			<a class="btn btn-success  btn-sm btn-block" href="{%url 'create_ps'%}" style="background-color: rgb(65, 137, 104);">Add a Public servant</a>
+			<table class="table">
+				<tr>
+				    <th>Email</th>
+                    <th>Department</th>
+					<th>Edit</th>
+					<th>Delete</th>
+				</tr>
+                {%for pb in public_servant%}
+                        <tr>
+                                <td>{{pb.email}}</td>
+                                <td>{{pb.department}}</td>
+								<td><a href="{%url 'update_ps' pb.email%}">Edit</a></td>
+								<td><a href="{%url 'delete_ps' pb.email%}">Delete</a></td>
+                        </tr>
+                {%endfor%}
+
+			</table>
+		</div>
+	</div>
+
+	
+
+</div>
+{%endblock%}

@@ -1,0 +1,37 @@
+{% extends 'users/main.html' %}
+
+{%block content%}
+
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body w-50 text-center mx-auto mb-2" style="background-color: rgb(230, 220, 206);">
+                        <h5>Countries</h5>
+                </div>
+		<div class="card card-body w-50 text-center mx-auto" style="background-color: rgb(230, 220, 206);" >
+			<a class="btn btn-success  btn-sm btn-block" href="{%url 'create_country'%} " style="background-color: rgb(65, 137, 104);">Add country</a>
+			<table class="table">
+				<tr>
+					<th>Country</th>
+                                        <th>Population</th>
+										<th>Edit</th>
+										<th>Delete</th>
+				</tr>
+                                {%for country in countries%}
+                                        <tr>
+                                                <td>{{country.cname}}</td>
+                                                <td>{{country.population}}</td>
+												<td><a href="{%url 'update_country' country.cname%}">Edit</a></td>
+												<td><a href="{%url 'delete_country' country.cname%}">Delete</a></td>
+                                        </tr>
+                                {%endfor%}
+
+
+			</table>
+		</div>
+	</div>
+
+	
+
+</div>
+{%endblock%}
